@@ -49,13 +49,13 @@ suite('Functional Tests', function () {
     test('Send {surname: "da Verrazzano"}', function (done) {
       chai
       .request(server)
-      .put('/travelers')
+      .put('/travellers')
       .send({"surname": "da Verrazzano"})
-      .end(function (err, res) {
-        assert.equal(res.status, 200);
-        assert.equal(res.type, "application/json");
-        assert.equal(res.body.name, "Giovanni");
-        assert.equal(res.body.surname, "da Verrazzano");
+      .end((error, response) {
+        assert.equal(response.status, 200);
+        assert.equal(response.type, "application/json");
+        assert.equal(response.body.name, "Giovanni");
+        assert.equal(response.body.surname, "da Verrazzano");
         done();
       });
       
