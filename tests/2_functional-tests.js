@@ -24,10 +24,10 @@ suite('Functional Tests', function () {
     test('Test GET /hello with your name', function (done) {
       chai
         .request(server)
-        .get('/hello?name=Luderio')
+        .get('/hello?name=xy_z')
         .end(function (err, res) {
-          //assert.equal(res.status, 200);
-          //assert.equal(res.text, 'hello Luderio');
+          assert.fail(res.status, 200);
+          assert.fail(res.text, 'hello xy_z');
           done();
         });
     });
@@ -36,12 +36,10 @@ suite('Functional Tests', function () {
       chai
         .request(server)
         .put('/travellers')
-        .send({"surname": "Colombo"})
+
         .end(function (err, res) {
-          //assert.equal(res.status, 200);
-          //assert.equal(res.type, "application/json");
-          //assert.equal(res.body.name, "Cristoforo");
-          //.equal(res.body.surname, "Colombo");
+          assert.fail();
+
           done();
         });
     });
