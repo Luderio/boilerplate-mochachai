@@ -27,7 +27,7 @@ suite('Functional Tests', function () {
         .get('/hello?name=Luderio')
         .end(function (err, res) {
           assert.fail(res.status, 200);
-          assert.fail(res.text, 'hello Luderio');
+          assert.equal(res.text, 'hello Luderio');
           done();
         });
     });
