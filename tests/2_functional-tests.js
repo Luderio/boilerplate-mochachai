@@ -72,7 +72,7 @@ suite('Functional Tests with Zombie.js', function () {
   const browser = new Browser();
 
   suiteSetup(function(done) {
-    return browser.visit('/', done);
+    return browser.visit('/', done());
   });
   
 
